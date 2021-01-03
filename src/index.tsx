@@ -1,7 +1,6 @@
 import { NativeModules } from 'react-native';
-
 type JailbreakType = {
-  multiply(a: number, b: number): Promise<number>;
+  check(): Promise<boolean>;
 };
 
 const { Jailbreak } = NativeModules;

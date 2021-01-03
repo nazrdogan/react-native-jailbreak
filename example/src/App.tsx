@@ -5,15 +5,15 @@ import Jailbreak from 'react-native-jailbreak';
 
 
 export default function App() {
-  const [result, setResult] = React.useState<number | undefined>();
+  const [result, setResult] = React.useState<boolean | undefined>();
 
   React.useEffect(() => {
-    Jailbreak.multiply(3, 7).then(setResult);
+    Jailbreak.check().then(setResult);
   }, []);
 
   return (
     <View style={styles.container}>
-      <Text>Result: {result}</Text>
+      <Text>Result1: {result?.toString()}</Text>
     </View>
   );
 }

@@ -18,4 +18,5 @@ Pod::Spec.new do |s|
   
 
   s.dependency "React-Core"
+  s.dependency 'DTTJailbreakDetection'
 end

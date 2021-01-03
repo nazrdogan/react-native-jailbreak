@@ -1,19 +1,18 @@
 #import "Jailbreak.h"
+#import <DTTJailbreakDetection/DTTJailbreakDetection.h>
 
 @implementation Jailbreak
 
 RCT_EXPORT_MODULE()
 
-// Example method
-// See // https://reactnative.dev/docs/native-modules-ios
-RCT_REMAP_METHOD(multiply,
-                 multiplyWithA:(nonnull NSNumber*)a withB:(nonnull NSNumber*)b
-                 withResolver:(RCTPromiseResolveBlock)resolve
-                 withRejecter:(RCTPromiseRejectBlock)reject)
+RCT_EXPORT_METHOD(check:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject)
 {
-  NSNumber *result = @([a floatValue] * [b floatValue]);
-
-  resolve(result);
+ if ([DTTJailbreakDetection isJailbroken]) {
+    resolve(@(YES));
+  } else {
+    resolve(@(NO));
+  }
 }
+
 
 @end
