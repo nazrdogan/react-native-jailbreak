@@ -6,16 +6,18 @@ jailbreak detection ios/android
 
 ```sh
 npm install react-native-jailbreak
+
+yarn add react-native-jailbreak
 ```
 
 ## Usage
 
 ```js
-import Jailbreak from "react-native-jailbreak";
+import Jailbreak from 'react-native-jailbreak';
 
 // ...
 
-const result = await Jailbreak.multiply(3, 7);
+const result = await Jailbreak.check(); // returns  true or false
 ```
 
 ## Contributing
